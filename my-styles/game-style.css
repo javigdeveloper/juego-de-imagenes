@@ -1,0 +1,84 @@
+.nav-style {
+  background-color: rgb(0, 125, 129);
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.nav-style li a {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-style li a:hover {
+  text-shadow: 10px 10px 10px rgb(0, 0, 0);
+  color: rgb(216, 160, 160);
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0em 0em 1.4em 0em;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+img {
+  margin-top: 1em;
+  height: 50vh;
+}
+
+h3 {
+  font-size: 3em;
+  margin-top: 20vh;
+  color: red;
+}
+
+h4 {
+  font-size: 3.5em;
+  margin-top: 20vh;
+  color: rgb(44, 190, 0);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5em;
+  margin-right: 6em;
+}
+
+.choice {
+  margin: 0.2em 0em;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 1.8em;
+  height: 1.8em;
+  cursor: pointer;
+}
+
+button {
+  height: 2em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  font-size: 0.5em;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+
+button:hover {
+  background-color: rgb(0, 125, 129);
+  color: rgb(255, 255, 255);
+}
