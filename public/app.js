@@ -1,12 +1,14 @@
 let pics = [
-  "mesa",
-  "puerta",
-  "silla",
-  "sofa",
-  "cocina",
-  "baño",
-  "ventana",
-  "cama",
+  "huevos",
+  "leche",
+  "mantequilla",
+  "pan",
+  "queso",
+  "mermelada",
+  "salchichas",
+  "jugo",
+  "banano",
+  "cereal",
 ];
 let parent = document.getElementsByClassName("lock-img-size");
 let img = document.createElement("IMG");
@@ -28,20 +30,20 @@ function populateAnswers(arr, picText) {
 
 function chooseAnswers(option) {
   let answers = [
-    "alfombra",
-    "armario",
-    "techo",
-    "piso",
-    "sala",
-    "lámpara",
-    "cuadro",
-    "pared",
-    "escalera",
-    "corredor",
-    "sótano",
-    "chimenea",
-    "nevera",
+    "plato",
+    "cuchara",
+    "tenedor",
+    "vaso",
+    "servilleta",
+    "pocillo",
+    "cuchillo",
+    "bandeja",
+    "licuadora",
     "estufa",
+    "tostadora",
+    "olla",
+    "nevera",
+    "colador",
   ];
   let newArr = [];
   let randomForAnswers;
@@ -62,7 +64,7 @@ function selectAndRemove() {
   let ran = Math.floor(Math.random() * pics.length);
   let option = pics.splice(ran, 1);
   img.removeAttribute("src");
-  img.setAttribute("src", `./images/${option}.webp`);
+  img.setAttribute("src", `./images/${option}.jpg`);
   // passing option as an argument to chooseAnswers(), which is then just
   // going to pass that argument to populateAnswers.
   chooseAnswers(option);
