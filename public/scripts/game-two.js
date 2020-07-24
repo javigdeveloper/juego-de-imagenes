@@ -105,14 +105,6 @@ function checkCorrect() {
     return;
   } else {
     numerator++;
-    img.style.display = "none";
-    let message = document.createElement("h4");
-    message.innerHTML = "Correct!";
-    parent[0].appendChild(message);
-    setTimeout(function () {
-      message.remove();
-      img.style.display = "block";
-    }, 800);
     if (pics.length == 0) {
       numerator--;
       img.style.display = "none";
@@ -120,6 +112,15 @@ function checkCorrect() {
       let messageTwo = document.createElement("h4");
       messageTwo.innerHTML = "Muy Bien, has terminado!";
       parent[0].appendChild(messageTwo);
+    } else {
+      img.style.display = "none";
+      let message = document.createElement("h4");
+      message.innerHTML = "Correct!";
+      parent[0].appendChild(message);
+      setTimeout(function () {
+        message.remove();
+        img.style.display = "block";
+      }, 700);
     }
     imageCounterDiv.innerHTML = `Imágen ${numerator}/${totalPics}`;
   }
