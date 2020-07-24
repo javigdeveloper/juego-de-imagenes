@@ -19,10 +19,19 @@
   color: rgb(216, 160, 160);
 }
 
+.instructionOne {
+  display: flex;
+  justify-content: space-between;
+}
+
 h2 {
   font-size: 2em;
   text-align: center;
   margin: 0em 0em 1.4em 0em;
+}
+
+.parent-span {
+  margin-right: 1em;
 }
 
 .container {

@@ -1,24 +1,32 @@
 let pics = [
-  "huevos",
-  "leche",
-  "mantequilla",
-  "pan",
-  "queso",
-  "mermelada",
-  "salchichas",
-  "jugo",
-  "banano",
-  "cereal",
+  "camisa",
+  "camiseta",
+  "corbata",
+  "gorra",
+  "gafas",
+  "falda",
+  "bolso",
+  "tenis",
+  "zapatos",
+  "medias",
 ];
 let parent = document.getElementsByClassName("lock-img-size");
 let img = document.createElement("IMG");
 let divParent = document.getElementsByClassName("choice");
 let form = document.getElementById("formId");
+let imageCounterDiv = document.querySelector(".image-counter-div");
+let incorrectSpan = document.querySelector(".incorrect-span");
+let numerator = 1;
+let totalPics = pics.length;
+let wrong = 0;
 parent[0].appendChild(img);
+imageCounterDiv.innerHTML = `Imágen ${numerator}/${totalPics}`;
+incorrectSpan.innerHTML = wrong;
 
+// populating text for answers as well as inserting text for the correct answer:
 function populateAnswers(arr, picText) {
   let randomForOptions = Math.floor(Math.random() * 5);
-  let addPicText = arr.splice(randomForOptions, 0, picText);
+  arr.splice(randomForOptions, 0, picText);
   arr = arr.flat();
   for (let h = 0; h < 5; h++) {
     divParent[h].getElementsByTagName("label")[0].innerHTML = arr[h];
@@ -30,20 +38,18 @@ function populateAnswers(arr, picText) {
 
 function chooseAnswers(option) {
   let answers = [
-    "plato",
-    "cuchara",
-    "tenedor",
-    "vaso",
-    "servilleta",
-    "pocillo",
-    "cuchillo",
-    "bandeja",
-    "licuadora",
-    "estufa",
-    "tostadora",
-    "olla",
-    "nevera",
-    "colador",
+    "chaqueta",
+    "sombrero",
+    "manilla",
+    "collar",
+    "bufanda",
+    "guantes",
+    "buzo",
+    "vestido",
+    "sudadera",
+    "pijama",
+    "botas",
+    "abrigo",
   ];
   let newArr = [];
   let randomForAnswers;
@@ -60,11 +66,12 @@ function chooseAnswers(option) {
 
 let button = document.getElementById("btn");
 
+// choosing correct answer. (option will become passVar at the last line):
 function selectAndRemove() {
   let ran = Math.floor(Math.random() * pics.length);
   let option = pics.splice(ran, 1);
   img.removeAttribute("src");
-  img.setAttribute("src", `./images/${option}.jpg`);
+  img.setAttribute("src", `../images/${option}.jpg`);
   // passing option as an argument to chooseAnswers(), which is then just
   // going to pass that argument to populateAnswers.
   chooseAnswers(option);
@@ -84,6 +91,9 @@ function checkCorrect() {
     }
   }
   if (chosenOption != passVar) {
+    wrong++;
+    incorrectSpan.innerHTML = wrong;
+    incorrectSpan.style.color = "red";
     img.style.display = "none";
     let message = document.createElement("h3");
     message.innerHTML = "Incorrect, keep trying...";
@@ -94,14 +104,18 @@ function checkCorrect() {
     }, 2000);
     return;
   } else {
+    numerator++;
     if (pics.length == 0) {
+      numerator--;
       img.style.display = "none";
       form.style.display = "none";
       let messageTwo = document.createElement("h4");
       messageTwo.innerHTML = "Muy Bien, has terminado!";
       parent[0].appendChild(messageTwo);
     }
+    imageCounterDiv.innerHTML = `Imágen ${numerator}/${totalPics}`;
   }
+
   // clearing radioBtns...
   for (let l = 0; l < 5; l++) {
     divParent[l].getElementsByTagName("input")[0].checked = false;
