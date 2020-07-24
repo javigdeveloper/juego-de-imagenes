@@ -112,7 +112,7 @@ function checkCorrect() {
     setTimeout(function () {
       message.remove();
       img.style.display = "block";
-    }, 900);
+    }, 800);
     if (pics.length == 0) {
       numerator--;
       img.style.display = "none";

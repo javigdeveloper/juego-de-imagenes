@@ -105,6 +105,14 @@ function checkCorrect() {
     return;
   } else {
     numerator++;
+    img.style.display = "none";
+    let message = document.createElement("h4");
+    message.innerHTML = "Correct!";
+    parent[0].appendChild(message);
+    setTimeout(function () {
+      message.remove();
+      img.style.display = "block";
+    }, 800);
     if (pics.length == 0) {
       numerator--;
       img.style.display = "none";
