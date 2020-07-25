@@ -96,7 +96,7 @@ function checkCorrect() {
     incorrectSpan.style.color = "red";
     img.style.display = "none";
     let message = document.createElement("h3");
-    message.innerHTML = "Incorrect, keep trying...";
+    message.innerHTML = "Incorrecto, sigue intentando...";
     parent[0].appendChild(message);
     setTimeout(function () {
       message.remove();
@@ -115,7 +115,7 @@ function checkCorrect() {
     } else {
       img.style.display = "none";
       let message = document.createElement("h4");
-      message.innerHTML = "Correct!";
+      message.innerHTML = "Correcto!";
       parent[0].appendChild(message);
       setTimeout(function () {
         message.remove();
